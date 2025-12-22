@@ -1,0 +1,550 @@
+/* ===============================
+   КОРЗИНА WOOCOMMERCE - БЕЗ УВЕДОМЛЕНИЙ
+=============================== */
+
+/* 1. СКРЫТЬ ВСЕ УВЕДОМЛЕНИЯ */
+.woocommerce-cart .woocommerce-notices-wrapper,
+.woocommerce-cart .woocommerce-message,
+.woocommerce-cart .woocommerce-error {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+/* 2. ОСНОВНОЙ КОНТЕЙНЕР */
+.woocommerce-cart .woocommerce {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    font-family: "Ubuntu", sans-serif;
+    background-color: #404625;
+    color: #fff;
+    padding: 50px 30px 50px 30px !important; /* ТОЛЬКО ВЕРХНИЕ И НИЖНИЕ ОТСТУПЫ */
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* 3. ЛЕВАЯ КОЛОНКА - ТАБЛИЦА (64%) */
+.woocommerce-cart form.woocommerce-cart-form {
+    flex: 0 0 64% !important;
+    width: 64% !important;
+    margin-right: 2% !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    float: left !important;
+}
+
+/* 4. ПРАВАЯ КОЛОНКА - ИТОГИ (34%) */
+.woocommerce-cart .cart-collaterals {
+    flex: 0 0 34% !important;
+    width: 34% !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    float: left !important;
+    position: sticky !important;
+    top: 20px !important;
+    z-index: 10 !important;
+}
+
+/* 5. ТАБЛИЦА ТОВАРОВ */
+.woocommerce-cart table.shop_table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(60, 51, 20, 0.75);
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-top: 0 !important;
+}
+
+.woocommerce-cart table.shop_table thead {
+    background-color: rgba(64, 70, 37, 0.85);
+}
+
+.woocommerce-cart table.shop_table th {
+    font-weight: 500;
+    color: #fff;
+    font-size: 18px;
+    padding: 18px 15px;
+    text-align: left;
+    border-bottom: 2px solid rgba(143, 148, 103, 0.7);
+}
+
+.woocommerce-cart table.shop_table td {
+    padding: 20px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(143, 148, 103, 0.3);
+    vertical-align: middle;
+}
+
+/* 6. ИЗОБРАЖЕНИЕ ТОВАРА - ПЕРЕЗАПИСЫВАЕМ WOOCOMMERCE СТИЛИ */
+.woocommerce-cart .product-thumbnail,
+.woocommerce-cart .product-thumbnail a,
+.woocommerce-cart .product-thumbnail img {
+    width: auto !important; /* Сброс WooCommerce стилей */
+}
+
+/* Более специфичный селектор */
+body.woocommerce-cart .woocommerce .shop_table.cart .product-thumbnail img,
+#add_payment_method table.cart .product-thumbnail img,
+.woocommerce-cart table.cart .product-thumbnail img,
+.woocommerce-checkout table.cart .product-thumbnail img {
+    width: 120px !important;
+    height: 120px !important;
+    max-width: 120px !important;
+    min-width: 120px !important;
+    object-fit: cover !important;
+    border-radius: 15px !important;
+    border: 3px solid rgba(143, 148, 103, 0.5) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Контейнер для изображения */
+body.woocommerce-cart .product-thumbnail {
+    width: 140px !important;
+    min-width: 140px !important;
+    max-width: 140px !important;
+}
+
+body.woocommerce-cart .product-thumbnail a {
+    display: block !important;
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto !important;
+}
+
+/* 7. НАЗВАНИЕ ТОВАРА */
+.woocommerce-cart .product-name a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.woocommerce-cart .product-name a:hover {
+    color: #8F9467;
+}
+
+/* 8. ЦЕНА */
+.woocommerce-cart .product-price .amount,
+.woocommerce-cart .product-subtotal .amount {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/* 9. ПОЛЕ КОЛИЧЕСТВА */
+.woocommerce-cart .quantity .qty {
+    width: 70px;
+    height: 45px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 0 15px;
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid #8F9467;
+}
+
+/* 10. КНОПКА УДАЛИТЬ */
+.woocommerce-cart .product-remove a.remove {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: rgba(143, 148, 103, 0.3);
+    transition: all 0.3s ease;
+}
+
+.woocommerce-cart .product-remove a.remove:hover {
+    background-color: #ff5a1f;
+    color: #fff;
+}
+
+/* 11. КНОПКИ ПОД ТАБЛИЦЕЙ */
+.woocommerce-cart .actions {
+    padding: 25px;
+    background-color: rgba(60, 51, 20, 0.5);
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.woocommerce-cart .actions .button {
+    background-color: rgba(143, 148, 103, 0.75);
+    color: #3C3314 !important;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 14px 35px;
+    font-family: "Ubuntu", sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    float: right;
+}
+
+.woocommerce-cart .actions .button:hover {
+    background-color: #8F9467 !important;
+    color: #fff !important;
+}
+
+/* 12. БЛОК ИТОГОВ */
+.woocommerce-cart .cart_totals {
+    background-color: rgba(60, 51, 20, 0.75);
+    padding: 35px !important;
+    border-radius: 25px;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.woocommerce-cart .cart_totals h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(143, 148, 103, 0.5);
+}
+
+/* 13. ТАБЛИЦА ИТОГОВ */
+.woocommerce-cart .cart_totals table {
+    width: 100% !important;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.woocommerce-cart .cart_totals table th,
+.woocommerce-cart .cart_totals table td {
+    padding: 14px 10px !important;
+    text-align: left;
+    border-bottom: 1px solid rgba(143, 148, 103, 0.3);
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.woocommerce-cart .cart_totals table th {
+    font-weight: 500;
+    color: #fff;
+    font-size: 17px;
+    width: 60%;
+}
+
+.woocommerce-cart .cart_totals table td {
+    font-weight: 500;
+    color: #fff;
+    font-size: 17px;
+    text-align: right;
+    width: 40%;
+}
+
+.woocommerce-cart .cart_totals table .order-total th,
+.woocommerce-cart .cart_totals table .order-total td {
+    font-size: 20px;
+    font-weight: 700;
+    color: #8F9467;
+    border-top: 2px solid rgba(143, 148, 103, 0.5);
+    padding-top: 15px;
+    border-bottom: none;
+}
+
+.woocommerce-cart .cart_totals .amount {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+/* 14. КНОПКА ОФОРМЛЕНИЯ ЗАКАЗА */
+.woocommerce-cart .wc-proceed-to-checkout {
+    margin-top: 25px !important;
+    padding-top: 20px !important;
+    border-top: 2px solid rgba(143, 148, 103, 0.5);
+    width: 100% !important;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+    display: block;
+    width: 100% !important;
+    background-color: rgba(143, 148, 103, 0.75);
+    color: #3C3314 !important;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 18px 25px !important;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
+    background-color: #8F9467 !important;
+    color: #fff !important;
+}
+
+/* ===============================
+   СООБЩЕНИЕ "КОРЗИНА ПУСТА" ПОЛНЫЙ ФИКС
+=============================== */
+
+/* 1. ВОССТАНОВИТЬ ВИДИМОСТЬ СООБЩЕНИЯ */
+.woocommerce-cart .woocommerce-info {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    margin: 50px 0 !important;
+    padding: 40px !important;
+    background-color: rgba(60, 51, 20, 0.75) !important;
+    color: #fff !important;
+    border-radius: 25px !important;
+    border: 2px solid rgba(143, 148, 103, 0.7) !important;
+    text-align: left !important;
+    font-size: 22px !important;
+    font-family: "Ubuntu", sans-serif !important;
+    position: relative !important;
+}
+
+/* 2. ИКОНКА СЛЕВА */
+.woocommerce-cart .woocommerce-info:before {
+    content: "🛒" !important; /* Emoji иконка */
+    position: absolute !important;
+    left: 30px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 40px !important;
+    margin-right: 0 !important;
+    display: block !important;
+}
+
+/* 3. ПЕРЕМЕСТИТЬ ТЕКСТ ПРАВЕЕ ИКОНКИ */
+.woocommerce-cart .woocommerce-info {
+    padding-left: 100px !important;
+    padding-right: 30px !important;
+    min-height: 120px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* 4. КОНТЕЙНЕР ДЛЯ ТЕКСТА И КНОПКИ */
+.woocommerce-cart .woocommerce-info .woocommerce-info-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+}
+
+/* 5. ТЕКСТ СООБЩЕНИЯ */
+.woocommerce-cart .woocommerce-info p:first-child {
+    margin: 0 0 15px 0 !important;
+    padding: 0 !important;
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+}
+
+/* 6. КНОПКА "ВЕРНУТЬСЯ В МАГАЗИН" - СТИЛЬ ПОД ВАШ ДИЗАЙН */
+.woocommerce-cart .woocommerce-info .button {
+    display: inline-block !important;
+    background-color: rgba(143, 148, 103, 0.75) !important;
+    color: #3C3314 !important;
+    border-radius: 50px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    padding: 12px 35px !important;
+    text-decoration: none !important;
+    font-family: "Ubuntu", sans-serif !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin-top: 10px !important;
+    align-self: flex-start !important;
+}
+
+.woocommerce-cart .woocommerce-info .button:hover {
+    background-color: #8F9467 !important;
+    color: #fff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+}
+
+/* 7. ФИКС ДЛЯ КОНТЕЙНЕРА WOOCOMMERCE */
+.woocommerce-cart .woocommerce .woocommerce-info {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 8. ЕСЛИ WOOCOMMERCE ИСПОЛЬЗУЕТ ДРУГУЮ СТРУКТУРУ */
+.woocommerce-cart .cart-empty {
+    display: block !important;
+    background-color: rgba(60, 51, 20, 0.75) !important;
+    color: #fff !important;
+    border-radius: 25px !important;
+    border: 2px solid rgba(143, 148, 103, 0.7) !important;
+    padding: 40px 40px 40px 100px !important;
+    margin: 50px 0 !important;
+    font-size: 22px !important;
+    font-family: "Ubuntu", sans-serif !important;
+    position: relative !important;
+    min-height: 120px !important;
+}
+
+.woocommerce-cart .cart-empty:before {
+    content: "🛒" !important;
+    position: absolute !important;
+    left: 30px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 40px !important;
+}
+
+.woocommerce-cart .return-to-shop {
+    margin-top: 20px !important;
+    text-align: left !important;
+}
+
+.woocommerce-cart .return-to-shop .button {
+    display: inline-block !important;
+    background-color: rgba(143, 148, 103, 0.75) !important;
+    color: #3C3314 !important;
+    border-radius: 50px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    padding: 12px 35px !important;
+    text-decoration: none !important;
+    font-family: "Ubuntu", sans-serif !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.woocommerce-cart .return-to-shop .button:hover {
+    background-color: #8F9467 !important;
+    color: #fff !important;
+}
+
+/* 9. МОБИЛЬНАЯ АДАПТАЦИЯ */
+@media (max-width: 768px) {
+    .woocommerce-cart .woocommerce-info {
+        padding: 30px 20px 30px 80px !important;
+        min-height: 100px !important;
+        font-size: 18px !important;
+    }
+    
+    .woocommerce-cart .woocommerce-info:before {
+        left: 20px !important;
+        font-size: 32px !important;
+    }
+    
+    .woocommerce-cart .woocommerce-info .button {
+        padding: 10px 25px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* 15. АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ */
+@media (max-width: 1024px) {
+    .woocommerce-cart .woocommerce {
+        padding: 40px 20px;
+    }
+    
+    .woocommerce-cart form.woocommerce-cart-form {
+        flex: 0 0 62% !important;
+        width: 62% !important;
+    }
+    
+    .woocommerce-cart .cart-collaterals {
+        flex: 0 0 36% !important;
+        width: 36% !important;
+    }
+}
+
+/* 16. АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ (880px) */
+@media (max-width: 880px) {
+    .woocommerce-cart .woocommerce {
+        flex-direction: column !important;
+        padding: 30px 15px;
+    }
+    
+    .woocommerce-cart form.woocommerce-cart-form,
+    .woocommerce-cart .cart-collaterals {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 30px;
+        float: none !important;
+        position: static !important;
+    }
+    
+    /* АДАПТИВНАЯ ТАБЛИЦА */
+    .woocommerce-cart table.shop_table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .woocommerce-cart table.shop_table thead {
+        display: none;
+    }
+    
+    .woocommerce-cart table.shop_table tbody,
+    .woocommerce-cart table.shop_table tr {
+        display: block;
+        width: 100%;
+    }
+    
+    .woocommerce-cart table.shop_table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10px;
+        text-align: right;
+    }
+    
+    .woocommerce-cart table.shop_table td:before {
+        content: attr(data-title);
+        font-weight: 500;
+        color: #8F9467;
+        text-align: left;
+        padding-right: 15px;
+        flex: 1;
+    }
+    
+    .woocommerce-cart table.shop_table td.product-thumbnail:before,
+    .woocommerce-cart table.shop_table td.product-remove:before {
+        display: none;
+    }
+    
+    .woocommerce-cart table.shop_table td.product-thumbnail,
+    .woocommerce-cart table.shop_table td.product-remove {
+        justify-content: center;
+    }
+}
+
+/* 17. АДАПТАЦИЯ ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ */
+@media (max-width: 480px) {
+    .woocommerce-cart .woocommerce {
+        padding: 20px 10px;
+    }
+    
+    .woocommerce-cart .cart_totals {
+        padding: 25px !important;
+    }
+    
+    .woocommerce-cart .cart_totals table th,
+    .woocommerce-cart .cart_totals table td {
+        font-size: 16px;
+        padding: 12px 8px !important;
+    }
+}
+

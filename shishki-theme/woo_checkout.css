@@ -1,0 +1,487 @@
+/* ===========================================
+   ОФОРМЛЕНИЕ ЗАКАЗА WOOCOMMERCE - ФИКС ДЛЯ ЗАГОЛОВКА
+============================================ */
+
+/* 1. ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ */
+.woocommerce-checkout .woocommerce {
+    font-family: "Ubuntu", sans-serif;
+    background-color: #404625;
+    color: #fff;
+    padding: 50px 30px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* 2. ЗАГОЛОВОК СТРАНИЦЫ */
+.woocommerce-checkout .entry-title,
+.woocommerce-checkout h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+/* 3. ФИКС ДЛЯ ЗАГОЛОВКА "ВАШ ЗАКАЗ" */
+#order_review_heading {
+    display: none !important; /* Скрываем заголовок между формами */
+}
+
+/* Создаем новый заголовок для левой колонки */
+.woocommerce-checkout #order_review::before {
+    content: "Ваш заказ";
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(143, 148, 103, 0.5);
+    width: 100%;
+}
+
+/* 4. ОСНОВНОЙ КОНТЕЙНЕР ФОРМЫ */
+.woocommerce-checkout .woocommerce-checkout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
+/* 5. ЛЕВАЯ КОЛОНКА - ПОДЫТОГ И ОПЛАТА (48%) */
+.woocommerce-checkout #order_review {
+    flex: 0 0 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+/* 6. ПРАВАЯ КОЛОНКА - ФОРМЫ ЗАПОЛНЕНИЯ (48%) */
+.woocommerce-checkout .col2-set {
+    flex: 0 0 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 7. БЛОК С ДЕТАЛЯМИ ЗАКАЗА (ПЛАТЕЖНЫЙ АДРЕС) */
+.woocommerce-checkout .col2-set .col-1 {
+    background-color: rgba(60, 51, 20, 0.75);
+    border-radius: 25px;
+    padding: 35px;
+    width: 100%;
+    box-sizing: border-box;
+    order: 1; /* Первый элемент */
+}
+
+/* 8. БЛОК С ДОСТАВКОЙ И ПРИМЕЧАНИЯМИ */
+.woocommerce-checkout .col2-set .col-2 {
+    background-color: rgba(60, 51, 20, 0.75);
+    border-radius: 25px;
+    padding: 35px;
+    width: 100%;
+    box-sizing: border-box;
+    order: 2; /* Второй элемент */
+}
+
+/* 9. БЛОКИ В ЛЕВОЙ КОЛОНКЕ */
+.woocommerce-checkout .woocommerce-checkout-review-order,
+.woocommerce-checkout #payment {
+    background-color: rgba(60, 51, 20, 0.75);
+    border-radius: 25px;
+    padding: 35px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 10. ЗАГОЛОВКИ ВНУТРИ БЛОКОВ */
+.woocommerce-checkout h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(143, 148, 103, 0.5);
+}
+
+/* 11. УБИРАЕМ ЗАГОЛОВОК ИЗ БЛОКА ПОДЫТОГА */
+.woocommerce-checkout .woocommerce-checkout-review-order h3 {
+    display: none; /* Скрываем дублирующий заголовок */
+}
+
+/* 12. ГРУППЫ ПОЛЕЙ */
+.woocommerce-checkout .form-row {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* 13. МЕТКИ ПОЛЕЙ */
+.woocommerce-checkout label {
+    display: block;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* 14. ПОЛЯ ВВОДА */
+.woocommerce-checkout input[type="text"],
+.woocommerce-checkout input[type="email"],
+.woocommerce-checkout input[type="tel"],
+.woocommerce-checkout input[type="password"],
+.woocommerce-checkout select,
+.woocommerce-checkout textarea {
+    width: 100%;
+    padding: 15px 20px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #8F9467;
+    border-radius: 25px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.woocommerce-checkout input:focus,
+.woocommerce-checkout select:focus,
+.woocommerce-checkout textarea:focus {
+    outline: none;
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 15. ЧЕКБОКСЫ И РАДИО-КНОПКИ */
+.woocommerce-checkout input[type="checkbox"],
+.woocommerce-checkout input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    accent-color: #8F9467;
+}
+
+/* 16. ВЫПАДАЮЩИЕ СПИСКИ */
+.woocommerce-checkout select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238F9467' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    padding-right: 50px;
+}
+
+/* 17. ТАБЛИЦА ТОВАРОВ В ЗАКАЗЕ */
+.woocommerce-checkout table.shop_table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(64, 70, 37, 0.5);
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.woocommerce-checkout table.shop_table th {
+    background-color: rgba(143, 148, 103, 0.7);
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 18px 15px;
+    text-align: left;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.woocommerce-checkout table.shop_table td {
+    padding: 15px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.woocommerce-checkout table.shop_table .product-name {
+    font-weight: 500;
+}
+
+.woocommerce-checkout table.shop_table .amount {
+    font-weight: 700;
+    color: #8F9467;
+}
+
+/* 18. БЛОК ИТОГОВ ЗАКАЗА */
+.woocommerce-checkout .cart-subtotal,
+.woocommerce-checkout .order-total,
+.woocommerce-checkout .shipping td {
+    background-color: rgba(60, 51, 20, 0.6);
+}
+
+.woocommerce-checkout .order-total th,
+.woocommerce-checkout .order-total td {
+    font-size: 20px;
+    font-weight: 700;
+    color: #8F9467;
+    border-top: 2px solid rgba(143, 148, 103, 0.5);
+}
+
+/* 19. СПОСОБЫ ОПЛАТЫ */
+.woocommerce-checkout .wc_payment_methods {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.woocommerce-checkout .wc_payment_method {
+    background-color: rgba(64, 70, 37, 0.5);
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.woocommerce-checkout .wc_payment_method:hover {
+    border-color: #8F9467;
+}
+
+.woocommerce-checkout .payment_box {
+    background-color: rgba(60, 51, 20, 0.8);
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin-top: 15px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.woocommerce-checkout .payment_box p {
+    margin: 0;
+}
+
+/* 20. КНОПКА "ОФОРМИТЬ ЗАКАЗ" */
+.woocommerce-checkout #place_order {
+    width: 100%;
+    background-color: #404625;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 18px 30px;
+    font-family: "Ubuntu", sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.woocommerce-checkout #place_order:hover {
+    background-color: #3C3314;
+    transform: translateY(-2px);
+}
+
+/* 21. УВЕДОМЛЕНИЯ */
+.woocommerce-checkout .woocommerce-message,
+.woocommerce-checkout .woocommerce-info,
+.woocommerce-checkout .woocommerce-error {
+    background-color: rgba(143, 148, 103, 0.9);
+    color: #fff;
+    border-radius: 25px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    border: none;
+    width: 100%;
+}
+
+/* 22. ФИКС ДЛЯ ВЫСОТЫ КОЛОНОК */
+.woocommerce-checkout .col2-set,
+.woocommerce-checkout #order_review {
+    min-height: 100px;
+}
+
+/* 23. МЕДИА ЗАПРОСЫ */
+
+/* Для планшетов */
+@media (max-width: 1024px) {
+    .woocommerce-checkout .woocommerce {
+        padding: 40px 20px;
+    }
+    
+    .woocommerce-checkout .woocommerce-checkout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .woocommerce-checkout .col2-set,
+    .woocommerce-checkout #order_review {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+    
+    .woocommerce-checkout #order_review {
+        position: static;
+    }
+    
+    /* Для мобильных скрываем псевдоэлемент и показываем оригинальный заголовок */
+    .woocommerce-checkout #order_review::before {
+        display: none;
+    }
+    
+    #order_review_heading {
+        display: block !important;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+    .woocommerce-checkout .woocommerce {
+        padding: 30px 15px;
+    }
+    
+    .woocommerce-checkout .entry-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .woocommerce-checkout h3 {
+        font-size: 22px;
+    }
+    
+    .woocommerce-checkout .col2-set .col-1,
+    .woocommerce-checkout .col2-set .col-2,
+    .woocommerce-checkout .woocommerce-checkout-review-order,
+    .woocommerce-checkout #payment {
+        padding: 25px 20px;
+    }
+    
+    #order_review_heading {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+}
+
+/* Для маленьких экранов */
+@media (max-width: 480px) {
+    .woocommerce-checkout .woocommerce {
+        padding: 20px 10px;
+    }
+    
+    .woocommerce-checkout .col2-set .col-1,
+    .woocommerce-checkout .col2-set .col-2,
+    .woocommerce-checkout .woocommerce-checkout-review-order,
+    .woocommerce-checkout #payment {
+        padding: 20px 15px;
+    }
+    
+    .woocommerce-checkout input,
+    .woocommerce-checkout select,
+    .woocommerce-checkout textarea {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+    
+    .woocommerce-checkout #place_order {
+        font-size: 18px;
+        padding: 16px 25px;
+    }
+    
+    #order_review_heading {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+}
+
+/* 24. ФИКС ДЛЯ ПОРЯДКА ЭЛЕМЕНТОВ В КОЛОНКЕ */
+.woocommerce-checkout .col2-set {
+    display: flex;
+    flex-direction: column;
+}
+
+.woocommerce-checkout .col2-set .col-1 {
+    order: 1;
+    margin-bottom: 30px;
+}
+
+.woocommerce-checkout .col2-set .col-2 {
+    order: 2;
+    margin-top: 0;
+}
+
+/* 25. ФИКС ДЛЯ РАСПОЛОЖЕНИЯ НА СТРАНИЦЕ */
+.woocommerce-checkout .woocommerce-checkout {
+    align-items: flex-start;
+}
+
+/* 26. СКРЫВАЕМ ДОПОЛНИТЕЛЬНЫЙ ЗАГОЛОВОК В ПРАВОЙ КОЛОНКЕ */
+.woocommerce-checkout .woocommerce-billing-fields h3,
+.woocommerce-checkout .woocommerce-additional-fields h3 {
+    /* Оставляем как есть - они нужны внутри блоков */
+}
+
+/* Убираем анимацию загрузки WooCommerce */
+.blockUI.blockOverlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.blockOverlay {
+    background: transparent !important;
+}
+
+.woocommerce .loader,
+.woocommerce-checkout .loader {
+    display: none !important;
+}
+
+/* ===============================
+   ФИКС: УВЕДОМЛЕНИЯ БЕЗ СМЕЩЕНИЯ КОЛОНОК
+=============================== */
+
+/* Переключаем checkout на grid */
+.woocommerce-checkout .woocommerce-checkout {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    column-gap: 4%;
+    row-gap: 30px;
+    align-items: start;
+}
+
+/* Уведомления — на всю ширину */
+.woocommerce-checkout .woocommerce-notices-wrapper {
+    grid-column: 1 / -1;
+}
+
+/* Левая колонка */
+.woocommerce-checkout .col2-set {
+    grid-column: 1 / 2;
+}
+
+/* Правая колонка */
+.woocommerce-checkout #order_review {
+    grid-column: 2 / 3;
+}
+
+
+.woocommerce-error a {
+    color: #ff9191;
+    font-weight: 300;
+    margin-top: 20px;
+    border-bottom: none;
+}
+
+/* Добавьте в конец вашего CSS checkout */
+.woocommerce-privacy-policy-text,
+.woocommerce-terms-and-conditions-wrapper {
+    display: none !important;
+}
+
+/* Убираем звездочку обязательного поля */
+#privacy_policy_field .required,
+#terms_field .required {
+    display: none !important;
+}

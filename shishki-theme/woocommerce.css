@@ -1,0 +1,60 @@
+/* === ADD TO CART ROW === */
+.single-product form.cart {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	margin-top: 30px;
+}
+
+/* === ADD TO CART BUTTON (ТВОЙ СТИЛЬ) === */
+.single_add_to_cart_button {
+	color: #3C3314 !important;
+	background-color: rgba(143, 148, 103, 0.75) !important;
+	border: none !important;
+	border-radius: 50px !important;
+	font-size: 28px !important;
+	padding: 20px 60px !important;
+	cursor: pointer;
+	font-family: "Ubuntu", sans-serif;
+	transition: 0.3s;
+}
+
+.single_add_to_cart_button:hover {
+	background-color: #8F9467 !important;
+}
+
+/* ===============================
+   ВОССТАНОВЛЕНИЕ ИКОНОК УВЕДОМЛЕНИЙ WOOCOMMERCE
+=============================== */
+
+/* 1. ВОССТАНОВИТЬ ИКОНКИ ДЛЯ ВСЕХ УВЕДОМЛЕНИЙ */
+.woocommerce-checkout .woocommerce-error:before,
+.woocommerce-checkout .woocommerce-info:before,
+.woocommerce-checkout .woocommerce-message:before {
+    content: "\e016" !important; /* Иконка WooCommerce */
+    font-family: 'WooCommerce' !important;
+    speak: never !important;
+    font-weight: 400 !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1 !important;
+    -webkit-font-smoothing: antialiased !important;
+    margin-right: 10px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    position: static !important;
+    font-size: 20px !important;
+}
+
+/* 2. ЦВЕТА ИКОНОК */
+.woocommerce-checkout .woocommerce-error:before {
+    color: #ff5a5a !important;
+}
+
+.woocommerce-checkout .woocommerce-info:before {
+    color: #8F9467 !important;
+}
+
+.woocommerce-checkout .woocommerce-message:before {
+    color: #8F9467 !important;
+}

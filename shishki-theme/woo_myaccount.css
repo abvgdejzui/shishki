@@ -1,0 +1,233 @@
+/* ===========================================
+   WOOCOMMERCE — МОЙ АККАУНТ (ПОД ТВОЙ СТИЛЬ)
+=========================================== */
+
+/* 1. ОБЩИЙ КОНТЕЙНЕР */
+.woocommerce-account .woocommerce {
+    font-family: "Ubuntu", sans-serif;
+    background-color: #404625;
+    color: #fff;
+    padding: 50px 30px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* 2. ЗАГОЛОВОК СТРАНИЦЫ */
+.woocommerce-account .entry-title,
+.woocommerce-account h1 {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* 3. ОСНОВНАЯ СЕТКА */
+.woocommerce-account .woocommerce {
+    display: grid;
+    grid-template-columns: 28% 68%;
+    gap: 4%;
+    align-items: flex-start;
+}
+
+/* ===============================
+   ЛЕВАЯ КОЛОНКА — МЕНЮ
+=============================== */
+
+.woocommerce-account .woocommerce-MyAccount-navigation {
+    background-color: rgba(60, 51, 20, 0.75);
+    border-radius: 25px;
+    padding: 30px 25px;
+}
+
+/* Список */
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Пункты меню */
+.woocommerce-account .woocommerce-MyAccount-navigation li {
+    margin-bottom: 12px;
+}
+
+/* Ссылки */
+.woocommerce-account .woocommerce-MyAccount-navigation a {
+    display: block;
+    padding: 14px 20px;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: rgba(64, 70, 37, 0.5);
+}
+
+/* Hover */
+.woocommerce-account .woocommerce-MyAccount-navigation a:hover {
+    background-color: rgba(143, 148, 103, 0.7);
+    color: #3C3314;
+}
+
+/* Активный пункт */
+.woocommerce-account .woocommerce-MyAccount-navigation li.is-active a {
+    background-color: #8F9467;
+    color: #3C3314;
+    font-weight: 700;
+}
+
+/* ===============================
+   ПРАВАЯ КОЛОНКА — КОНТЕНТ
+=============================== */
+
+.woocommerce-account .woocommerce-MyAccount-content {
+    background-color: rgba(60, 51, 20, 0.75);
+    border-radius: 25px;
+    padding: 35px;
+    box-sizing: border-box;
+}
+
+/* Заголовки внутри */
+.woocommerce-account .woocommerce-MyAccount-content h2,
+.woocommerce-account .woocommerce-MyAccount-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(143, 148, 103, 0.5);
+    color: #fff;
+}
+
+/* ===============================
+   ТАБЛИЦЫ (заказы, адреса)
+=============================== */
+
+.woocommerce-account table.shop_table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(64, 70, 37, 0.5);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.woocommerce-account table.shop_table th {
+    background-color: rgba(143, 148, 103, 0.7);
+    color: #fff;
+    padding: 16px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.woocommerce-account table.shop_table td {
+    padding: 16px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.woocommerce-account table.shop_table a {
+    color: #8F9467;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.woocommerce-account table.shop_table a:hover {
+    color: #fff;
+}
+
+/* ===============================
+   ФОРМЫ
+=============================== */
+
+.woocommerce-account label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.woocommerce-account input[type="text"],
+.woocommerce-account input[type="email"],
+.woocommerce-account input[type="password"],
+.woocommerce-account input[type="tel"],
+.woocommerce-account select {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 25px;
+    border: 2px solid #8F9467;
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    margin-bottom: 20px;
+}
+
+.woocommerce-account input:focus,
+.woocommerce-account select:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+/* ===============================
+   КНОПКИ
+=============================== */
+
+.woocommerce-account button,
+.woocommerce-account .button {
+    background-color: rgba(143, 148, 103, 0.75);
+    color: #3C3314 !important;
+    border-radius: 50px;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.woocommerce-account button:hover,
+.woocommerce-account .button:hover {
+    background-color: #8F9467;
+    color: #fff !important;
+}
+
+/* ===============================
+   УВЕДОМЛЕНИЯ
+=============================== */
+
+.woocommerce-account .woocommerce-message,
+.woocommerce-account .woocommerce-error,
+.woocommerce-account .woocommerce-info {
+    background-color: rgba(143, 148, 103, 0.9);
+    color: #fff;
+    border-radius: 25px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    border: none;
+}
+
+/* ===============================
+   АДАПТИВ
+=============================== */
+
+@media (max-width: 1024px) {
+    .woocommerce-account .woocommerce {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .woocommerce-account .woocommerce {
+        padding: 30px 15px;
+    }
+
+    .woocommerce-account .entry-title {
+        font-size: 28px;
+    }
+
+    .woocommerce-account .woocommerce-MyAccount-content,
+    .woocommerce-account .woocommerce-MyAccount-navigation {
+        padding: 25px;
+    }
+}
